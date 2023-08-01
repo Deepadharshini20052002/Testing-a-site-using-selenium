@@ -1,0 +1,20 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckBoxes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.flipkart.com/account/?rd=0&link=home_account/");	
+		WebElement checkbox=driver.findElement(By.xpath("//*[@id=\'container\']/div/div[3]/div/div[2]/div/div/div[1]/div[1]/form/div[3]/label[2]/div[2]/span"));
+		checkbox.click();
+		
+		
+	}
+
+}
