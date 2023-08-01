@@ -1,0 +1,28 @@
+package selenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+public class Color {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//find the color of the button
+		System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		driver.get("https://webstream.sastra.edu/sastrapwi/");
+		WebElement colorButton=driver.findElement(By.className("clsSubmit"));
+		//get css property
+		String color=colorButton.getCssValue("background-color");
+		System.out.println(color);
+		
+		//find the size of  the button
+		WebElement sizeButton=driver.findElement(By.className("clsSubmit"));
+		int height=sizeButton.getSize().getHeight();
+		int weight=sizeButton.getSize().getWidth();
+		System.out.println("Height" + height+ "Width" + weight);
+		
+		
+
+	}
+
+}
